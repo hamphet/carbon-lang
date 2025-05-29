@@ -71,6 +71,7 @@ def _carbon_binary_impl(ctx):
             objs.append(out)
             srcs_reordered = [s for s in srcs if s != src] + [src]
             ctx.actions.run(
+use_default_shell_env = True,
                 outputs = [out],
                 inputs = depset(direct = srcs_reordered, transitive = dep_hdrs),
                 executable = toolchain_driver,
@@ -82,6 +83,7 @@ def _carbon_binary_impl(ctx):
 
     bin = ctx.actions.declare_file(ctx.label.name)
     ctx.actions.run(
+use_default_shell_env = True,
         outputs = [bin],
         inputs = objs + dep_link_inputs,
         executable = toolchain_driver,

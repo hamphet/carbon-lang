@@ -96,6 +96,7 @@ def _expand_version_build_info_impl(ctx):
             ]
 
     ctx.actions.run(
+use_default_shell_env = True,
         inputs = inputs,
         outputs = [ctx.outputs.out],
         executable = ctx.executable._gen_tmpl_tool,
