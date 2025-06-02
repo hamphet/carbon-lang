@@ -214,23 +214,4 @@ common --incompatible_use_plus_in_repo_names
 common --incompatible_use_python_toolchains
 common --incompatible_validate_top_level_header_inclusions
 common --incompatible_visibility_private_attributes_at_definition
-common --action_env=NIX_CFLAGS_COMPILE
-common --host_action_env=NIX_CFLAGS_COMPILE
-common --action_env=NIX_CC_WRAPPER_TARGET_HOST_x86_64_unknown_linux_gnu
-common --host_action_env=NIX_CC_WRAPPER_TARGET_HOST_x86_64_unknown_linux_gnu
-common --action_env=LD
-common --host_action_env=LD
-common --action_env=NIX_LDFLAGS
-common --host_action_env=NIX_LDFLAGS
-common --action_env=NIX_BINTOOLS_WRAPPER_TARGET_HOST_x86_64_unknown_linux_gnu
-common --host_action_env=NIX_BINTOOLS_WRAPPER_TARGET_HOST_x86_64_unknown_linux_gnu
-common --action_env=NIX_LD
-common --host_action_env=NIX_LD
-common --action_env=NIX_BINTOOLS
-common --host_action_env=NIX_BINTOOLS
-common --action_env=PATH
-common --host_action_env=PATH
-common --action_env=NIX_LD_LIBRARY_PATH
-common --host_action_env=NIX_LD_LIBRARY_PATH
-common --action_env=LIBRARY_PATH
-common --host_action_env=LIBRARY_PATH
+try-import %workspace%/.bazelrc.nix-additions # Nix flake import
